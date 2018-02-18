@@ -1,5 +1,21 @@
-.sign {
-    padding: 5em;
-    background: rgb(66, 98, 244);
+header{
     width: 100%;
+    background: rgb(12,12,12);
+    font-size: 25px;
+}
+header a{
+    color: white;
+    font-variant: small-caps;
+}
+header li{
+    color: white;
+    font-variant: small-caps;
+    padding: 1em;
+}
+header li:hover{
+    background: rgb(12, 41, 204);
+    cursor: pointer;
+}
+header a:hover{
+    color: white;
 }

@@ -1,1 +1,47 @@
 
+#root img {
+    width: 200px;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#root ul{
+    margin-top: 4em;
+    margin-bottom: 4em;
+}
+#root ul li{
+    padding: 2em;
+    border: 4px solid rgb(66, 98, 244);
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+#root .top-wrapper,.text-wrapper{
+    margin-left: 2.5em;
+} 
+
+#root .img-wrapper {
+    text-align: center;
+}
+
+#root p {
+    display: block;
+    padding: 1em 2.5em;
+}
+
+@media screen and (max-width: 770px){
+    #root .top-wrapper,.text-wrapper{
+         margin-left: 0px !important;
+         text-align: center;
+     }
+     #root p {
+         padding: 0.5em 1em;
+     }
+     #root .text-wrapper {
+         text-align: justify;
+     }
+    
+}
+#root .item-wrapper {
+    padding: 0.7em 2em;
+}
