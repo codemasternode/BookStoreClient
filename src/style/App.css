@@ -1,0 +1,18 @@
+.nav-custom {
+    background: rgb(66, 98, 244);
+    -webkit-box-shadow: 0px 7px 5px 0px rgba(64, 103, 87, 0.44);
+    -moz-box-shadow:    0px 7px 5px 0px rgba(64, 103, 87, 0.44);
+    box-shadow:         0px 7px 5px 0px rgba(64, 103, 87, 0.44);
+}
+
+.nav-custom li:hover {
+    background: rgb(0, 153, 17);
+    cursor: pointer;
+}
+.nav-custom li a{
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    font-variant: small-caps;
+    padding: 1.5em;
+}
