@@ -18,17 +18,16 @@ class App extends React.Component {
             <Router history={history}>
                 <div>
                     <ul className="nav justify-content-end nav-custom">
-                        <li class="nav-item">
-                            <Link class="nav-link active" to="/">Home</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link active" to="/">Home</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/login">Login</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/login">Login</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/register">Register</Link>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/register">Register</Link>
                         </li>
                     </ul>
-                    <hr />
                     <Switch>
                         <Route exact path="/" component={Home} />
                         <Route path="/login" component={Login} />
