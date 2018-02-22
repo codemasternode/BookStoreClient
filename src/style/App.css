@@ -1,3 +1,8 @@
+
+*{
+    font-variant: small-caps !important;
+}
+
 .nav-custom {
     background: rgb(66, 98, 244);
     -webkit-box-shadow: 0px 7px 5px 0px rgba(64, 103, 87, 0.44);
