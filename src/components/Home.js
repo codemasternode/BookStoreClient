@@ -16,7 +16,6 @@ class Home extends React.Component {
       .then(respone => this.setState({
         array: respone
       }))
-    console.log(this.state.array)
   }
 
   render() {

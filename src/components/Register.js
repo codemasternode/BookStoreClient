@@ -12,7 +12,8 @@ class Register extends React.Component {
             username: '',
             email: '',
             password: '',
-            fireRedirect: false
+            fireRedirect: false,
+            errors: null
         };
     }
 
@@ -23,24 +24,46 @@ class Register extends React.Component {
         const email = this.state.email;
 
         event.preventDefault();
-        this.setState({ fireRedirect: true });
 
-        fetch(`http://localhost:8080/users/register`, {
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            method: 'POST',
-            body: JSON.stringify({
-                username: username,
-                email: email,
-                password: password
-            }),
-        })
-            .then(res => {
-                console.log(res);
+
+        fetch(`http://localhost:8080/users/checkUsername/` + username)
+            .then(respone =>
+                respone.json()
+            )
+            .then(respone => {
+                this.setState({ errors: respone.status })
             });
+
+        fetch(`http://localhost:8080/users/checkEmail/` + email)
+            .then(respone =>
+                respone.json()
+            )
+            .then(respone => {
+                this.setState({ errors: respone.status })
+            });
+        if (this.state.errors == 'Ok') {
+            fetch(`http://localhost:8080/users/register`, {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'POST',
+                body: JSON.stringify({
+                    username: username,
+                    email: email,
+                    password: password,
+                    status: ''
+                }),
+            });
+            this.setState({ fireRedirect: true });
+        } else {
+
+        }
     }
+
+
+
+
 
 
     render() {
@@ -51,24 +74,24 @@ class Register extends React.Component {
                 <form onSubmit={this.handleSubmit} className="register-form">
                     <h2>Form Register</h2>
                     <div className="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" id="username" class="form-control" placeholder="Enter Username" onChange={event => this.setState({
+                        <label htmlFor="username">Username</label>
+                        <input type="text" id="username" className="form-control" placeholder="Enter Username" onChange={event => this.setState({
                             username: event.target.value
                         })} />
                     </div>
                     <div className="form-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" class="form-control" placeholder="Enter email" onChange={event => this.setState({
+                        <label htmlFor="email">E-mail</label>
+                        <input type="email" id="email" className="form-control" placeholder="Enter email" onChange={event => this.setState({
                             email: event.target.value
                         })} />
                     </div>
                     <div className="form-group">
-                        <label for="pass">Password</label>
-                        <input class="form-control" id="pass" placeholder="Enter valid password" type="password" onChange={event => this.setState({
+                        <label htmlFor="pass">Password</label>
+                        <input className="form-control" id="pass" placeholder="Enter valid password" type="password" onChange={event => this.setState({
                             password: event.target.value
                         })} />
                     </div>
-                    <input type="submit" class="btn btn-lg button-custom-submit" value="Submit" />
+                    <input type="submit" className="btn btn-lg button-custom-submit" value="Submit" />
 
                 </form>
                 {fireRedirect && (

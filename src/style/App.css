@@ -21,3 +21,10 @@
     font-variant: small-caps;
     padding: 1.5em;
 }
+
+
+.footer {
+    padding: 4em;
+    background: rgb(66, 98, 244);
+    margin-top: 8em;
+}

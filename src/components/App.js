@@ -33,6 +33,11 @@ class App extends React.Component {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                     </Switch>
+                    <div className="footer">
+                        <div className="container">
+                            
+                        </div>
+                    </div>
                 </div>
             </Router>
         );
